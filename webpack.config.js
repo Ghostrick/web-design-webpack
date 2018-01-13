@@ -1,11 +1,11 @@
 const webpack = require('webpack'),
     glob = require('glob'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
-    HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin'),
-    entries = {}
+    HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin')
 
 const entryJsPath = `${__dirname}/src/js/entry`,
-    outputJsExt = 'min.js'
+    outputJsExt = 'min.js',
+    entries = {}
 
 
 // create entries object
@@ -44,7 +44,12 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude:/node_modules/,
-                loader: "babel-loader",
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['env']
+                    }
+                }
             },
             {
                 test: /\.pug$/,
@@ -53,6 +58,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.optimize.UglifyJsPlugin(),
         ...outputHtml,
         new HtmlWebpackExcludeAssetsPlugin()
     ]
