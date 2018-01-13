@@ -54,7 +54,11 @@ module.exports = {
             {
                 test: /\.pug$/,
                 loader: ["html-loader", "pug-html-loader"]
-            }
+            },
+            {
+                test: /\.styl$/,
+                loaders: ['style-loader', 'css-loader', 'stylus-loader']
+            },
         ]
     },
     plugins: [
