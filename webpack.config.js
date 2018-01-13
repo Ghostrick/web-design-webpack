@@ -59,6 +59,10 @@ module.exports = {
                 test: /\.styl$/,
                 loaders: ['style-loader', 'css-loader', 'stylus-loader']
             },
+            {
+                test: /\.(jpg|png|gif|jpeg|woff|woff2|eot|ttf|svg)$/,
+                loaders: 'url-loader'
+            }
         ]
     },
     plugins: [
