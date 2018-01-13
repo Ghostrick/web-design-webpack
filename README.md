@@ -1,4 +1,6 @@
 # web-design-webpack
+It is a template to use for web design.  
+I use webpack.
 
 ## Directory
 The `.js` file inside `entry/` should be paired with the `.html` file in the root directory. It is automatically combined by webpack.
