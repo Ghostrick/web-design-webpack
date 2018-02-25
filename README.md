@@ -3,7 +3,7 @@ It is a template to use for web design.
 I use webpack.
 
 ## Directory
-The `.js` file inside `entry/` should be paired with the `.html` file in the root directory. It is automatically combined by webpack.
+The `.js` file inside `entry/` should be paired with the `.pug` file in the root directory. It is automatically combined by webpack.
 ```
 ./src/
     |- assets/
@@ -26,8 +26,8 @@ The `.js` file inside `entry/` should be paired with the `.html` file in the roo
     |   |- common/
     |       |- common.styl
     |
-    |- index.html
-    |- about.html
+    |- index.pug
+    |- about.pug
 ```
 
 
